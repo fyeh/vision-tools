@@ -1,0 +1,231 @@
+html, body {
+    font-size: 1.2em;
+    font-family: arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.buttons {
+    width: 100vw;
+}
+  
+.tab {
+    border: none;
+    background-color: lightgray;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.selected {
+    background-color: gray;
+    color: white;
+    
+}
+
+.button {
+    border: none;
+    background-color: gray;
+    color: white;
+    padding: 15px 32px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.tightbutton {
+    border: none;
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.noresult {
+    border: none;
+}
+
+.fail {
+    border:red;
+    border-style: solid;
+    border-width: 5px;
+}
+
+.inconclusive {
+    border:orange;
+    border-style: solid;
+    border-width: 5px;
+}
+
+.pass {
+    border:lawngreen;
+    border-style: solid;
+    border-width: 5px;
+}
+
+#page {
+    height: 100%;
+    width: 100%;
+    margin: 10px 10px;
+}
+
+#logindiv {
+    height: 30%;
+    width: 100%;
+    display: contents;
+}
+
+#contentdiv {
+    position: relative;
+    height: 70%;
+    width: 100%;
+}
+
+#buttondiv {
+    height: 10%;
+    width: 100%;
+}
+
+#inspectdiv {
+    content: "";
+        display: block;
+        clear: both;
+        height: 100%;
+}
+
+#inspecttablediv {
+    display: inline-block;
+    height: 80%;
+    width:50%;
+    overflow: scroll; overflow-x:hidden;
+    padding: 0 10px;
+}
+
+#canvasDiv {
+    position: absolute;
+    top: 0px;
+    margin-top: 30px;
+    margin-left: 100px;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+}
+
+.utiltable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+.utiltable td, .utiltable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.utiltable tr:nth-child(even){background-color: #f2f2f2;}
+
+.utiltable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: gray;
+    color: white;
+}
+  
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.flash_container {
+    position: fixed;
+    top: .5vw;
+    right: .1vw;
+    margin-right: .5vw;
+    width: 20vw;
+    z-index: 100;
+    display: block;
+    word-wrap: break-word;
+  }
+
+.flash {
+    min-width: 1vw;
+    max-width: 20vw;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    border-radius: 4px;
+    margin-bottom: .5vw;
+    position: relative;
+    background: white;
+    color: black;
+    text-align: left;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.success {
+    border: 2px solid rgb(100,200,100);
+    border-left: 12px solid rgb(100,200,100);
+}
+
+.error {
+    border: 2px solid rgb(255, 70, 70);
+    border-left: 12px solid rgb(255, 70, 70);
+}
+
+.info {
+    border: 2px solid rgb(100, 100, 255);
+    border-left: 12px solid rgb(100, 100, 255);
+}
+
+.warn {
+    border: 2px solid rgb(250, 160, 0);
+    border-left: 12px solid rgb(250, 160, 0);
+}
+
+@keyframes spinner {
+0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+}
+100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+}
+}
+.spin::before {
+    animation: 1.5s linear infinite spinner;
+    animation-play-state: inherit;
+    border: solid 20px #cfd0d1;
+    border-bottom-color: #1c87c9;
+    border-radius: 50%;
+    content: "";
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    will-change: transform;
+    z-index: 100;
+}

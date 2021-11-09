@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MVI Edge</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="util.css">
+  <script src="./utilClient.js"></script>
+  <script src="./utilUX.js"></script>
+  <script src="./eventsource.js"></script>
+</head>
+
+<body onload="UX_init();">
+  <div id=page>
+    <div class="spin" id="spin" style="display:none"></div>
+    <div id=logindiv>
+      <h2>Inspector Utility</h2>
+      <p><b>Disclaimer:</b> These utilities are not part of the supported Maximo Visual Inspection Edge product. <br>
+        They make calls to the MVI Edge REST API that are not yet exposed in the UI but may be useful to developers<br>
+        who want to learn how to use the API.</p>
+      <hr>
+      <label for="userid">User:</label>
+      <input type="text" id="userid" value="masadmin">
+      <label for="pwd">Password:</label>
+      <input type="password" id="pwd" value="VisionP@ssw0rd">
+      <button type="button" class="button" id="login">Login</button>
+      <button type="button" class="button" id="logout">Logout</button>
+      <hr>
+    </div>
+    <div id=contentdiv>
+      <div id=inspectionsdiv class=content>
+        <h3>Inspections</h3>
+        <table id="inspectiontable" class="utiltable">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Mode</th>
+            <th>Status</th>
+            <th>#</th>
+            <th>Pass</th>
+            <th>Fail</th>
+            <th>Inconclusive</th>
+            <th>Alerts</th>
+          </tr>
+        </table>
+      </div>
+      <div id=inspectdiv class=content>
+        <div id=buttondiv>
+          <button type="button" class="button" id="closeInspect" onclick="UX_closeInspect();">Close</button>
+        </div>
+        <div id=inspecttablediv>
+          <table id="inspecttable" class="utiltable" style="text-align:center">
+          </table>
+        </div>
+        <div id=canvasDiv>
+          <canvas id="thecanvas" width="400" height="300"></canvas><br>
+          <textarea id="metadata" name="metadata" rows="20" cols="40"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
